@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import Next from "./Next";
+import Reducer from "./Componenet.js/Reducer";
+import NewReducer from "./Componenet.js/NewReducer";
+import { NewReducer1 } from "./Componenet.js/NewReducer1";
 
 function App() {
   return (
+    // <div>
+    //   <Home/>
+    // </div>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} exact />
+          <Route path="/next" element={<Next />} exact />
+          <Route path="/Reducer" element={<Reducer />} exact />
+          <Route path="/NewReducer" element={<NewReducer />} exact />
+          <Route path="/NewReducer1" element={<NewReducer1 />} exact />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
